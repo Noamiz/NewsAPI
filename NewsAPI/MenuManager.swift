@@ -71,7 +71,7 @@ class MenuManager: NSObject, UITableViewDelegate, UITableViewDataSource {
         menuTableView.register(BaseViewCell.classForCoder(), forCellReuseIdentifier: "cellId")
     }
     
-    //  One dection of rows.
+    //  One section of rows.
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

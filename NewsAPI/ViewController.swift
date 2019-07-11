@@ -11,27 +11,27 @@
  - URLSession runs in back thread.
  - Dispatching a main queue performes the code insede in the main thread so it is performed immediately.
  
-*/ /////////////////////////////   End   //////////////////////////////
+ */ /////////////////////////////   End   //////////////////////////////
 
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
-// Properties
+    
+    // Properties
     
     @IBOutlet weak var tableview: UITableView! 
     var articles: [Article]? = []  //  each article is an object we created containing the 5 properties (Author, description...).
     var source = "techcrunch"  //  Initial name of the source
     let menuManager = MenuManager()  //  Of type MenuManager that we created for the menu
     
-// Methodes
+    // Methodes
     
     //  viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchArticles(fromSource: source)
     }
-
+    
     
     //  The function that fetches the data.
     func fetchArticles(fromSource provider: String) {
@@ -89,7 +89,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.imgView.downloadImage(from: (self.articles?[indexPath.item].imageUrl)!)
         return cell
     }
-
+    
     //  When a row is selected this method is performed.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let webVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "web") as! WebviewViewController  //  "Main" referes to the Main.storyboard because there exists our new Web View Controller, and the "web" is the Webview view controller's Storyboard ID. This line of code will create our new web view controller.
