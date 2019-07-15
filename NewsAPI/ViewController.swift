@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableview: UITableView! 
     var articles: [Article]? = []  //  each article is an object we created containing the 5 properties (Author, description...).
     var source = "techcrunch"  //  Initial name of the source
-    let menuManager = MenuManager()  //  Of type MenuManager that we created for the menu
+    let menuManager = MenuManager()  //  Of type MenuManager that we created for the menu. We add () because it is an object.
     
     // Methodes
     
